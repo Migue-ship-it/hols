@@ -117,14 +117,14 @@ public class VacunaDAO {
 		}
 }
 	public void update(VacunaDAO dao) {
-		String script = "UPDATE tblvacunas set codigobarras = ?, nombre = ?, marca = ?, precio = ?, where id = ?";
+		String script = "UPDATE tblvacunas set nombre = ?, codigo = ?, dosis = ?, enfermedad = ?, where id = ?";
 		try {
 			conexionBD = conector.conectarBD();
 			pst = conexionBD.prepareStatement(script);
-			pst.setString(1, dao.getCodigobarras());
-			pst.setString(2, dao.getNombre());
-			pst.setString(3, dao.getMarca());
-			pst.setString(4, dao.getPrecio());
+			pst.setString(1, dao.getNombre());
+			pst.setInt(2, dao.getCodigo());
+			pst.setInt(3, dao.getDosis());
+			pst.setString(4, dao.getEnfermedad());
 			pst.setInt(5, dao.getId());
 			pst.executeUpdate();
 			}
