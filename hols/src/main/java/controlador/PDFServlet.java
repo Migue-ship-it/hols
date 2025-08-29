@@ -15,7 +15,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 /**
  * Servlet implementation class PDF
  */
-@WebServlet("/PDF")
+@WebServlet("/PDFServlet")
 public class PDFServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
